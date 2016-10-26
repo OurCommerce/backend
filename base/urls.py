@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
+from rest_framework_jwt.views import obtain_jwt_token
 from yap.views import index
 
 
@@ -24,4 +25,5 @@ urlpatterns = [
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^admin/', admin.site.urls),
+    url(r'^obtain-jwt-token/', obtain_jwt_token),
 ]
